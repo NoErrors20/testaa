@@ -1,0 +1,25 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:8761/eureka
+spring:
+  application:
+    name: zuul
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+zuul:
+  host:
+    connect-timeout-millis: 1000
+    socket-timeout-millis: 1000
+feign:
+  client:
+    config:
+      default:
+        ConnectTimeOut: 1000
+        ReadTimeOut: 1000
+
